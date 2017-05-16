@@ -11,7 +11,21 @@ const PORT = process.env.PORT || 3000;
 
 // TODO: Include all of the static resources as an argument to app.use()
 
+
+const express = require('express');
+
+const app = express();
+
+app.use(express.static('./public'));
+
+
 // TODO: Write a new route that will handle a request and send the new.html file back to the user
+app.get('/secret-mission', function(req, res) {
+  console.log('007 mission');
+  res.sendFile('public/new.html', {root:'.'});
+
+});
+
 
 
 app.post('/articles', bodyParser, function(request, response) {
@@ -24,4 +38,5 @@ app.post('/articles', bodyParser, function(request, response) {
 
 app.listen(PORT, function() {
   // TODO: Log to the console a message that lets you know which port your server has started on
+  console.log('secret mission is completed aka localhost: '+PORT);
 });
