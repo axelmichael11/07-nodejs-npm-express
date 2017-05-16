@@ -11,6 +11,8 @@ const PORT = process.env.PORT || 3000;
 
 // TODO: Include all of the static resources as an argument to app.use()
 
+
+
 // TODO: Write a new route that will handle a request and send the new.html file back to the user
 
 
